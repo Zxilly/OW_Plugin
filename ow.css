@@ -1,0 +1,159 @@
+html {
+    background: #2F3545;
+    color: #FFF;
+    font: 12px sans-serif;
+}
+
+body,
+h2,
+p {
+    margin: 0;
+}
+
+.ow-stat-box {
+    overflow: hidden;
+}
+
+.ow-stat-box .head {
+    padding: 10px;
+}
+
+.ow-stat-box .head .user-link {
+    font-size: 24px;
+    line-height: 36px;
+}
+
+.ow-stat-box .head .user-link img {
+    width: 36px;
+    height: 36px;
+    border-radius: 2px;
+    vertical-align: top;
+    margin-right: 10px;
+}
+
+.ow-stat-box .head .level {
+    float: right;
+    height: 36px;
+}
+
+.ow-stat-box .num-box {
+    margin: 0 -30px 0 0;
+    list-style-type: none;
+    padding: 5px 0 5px 5px;
+    overflow: hidden;
+    background: #111;
+    text-shadow: 0 1px 0 #000;
+}
+
+.ow-stat-box .num-box li {
+    float: left;
+    padding: 5px 10px;
+    margin-right: 10px;
+}
+
+.ow-stat-box .num-box li:last-child {
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.ow-stat-box .num-box li span {
+    display: block;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 100;
+}
+
+.ow-stat-box .num-box li b {
+    display: block;
+    font-style: 12px;
+    line-height: 18px;
+    font-weight: 200;
+    color: #8A9EA7;
+}
+
+.ow-stat-box .last-round-box {
+    position: relative;
+    text-align: right;
+    padding: 10px 17px;
+}
+
+.ow-stat-box .last-round-box h2 {
+    font-size: 12px;
+    line-height: 22px;
+    font-weight: 200;
+    color: #8A9EA7;
+    background: #111;
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    padding: 0 7px;
+    border-radius: 2px;
+    margin-left: -43px;
+}
+
+.ow-stat-box .last-round-box p.kd-value {
+    font-size: 21px;
+    line-height: 34px;
+    font-weight: 200;
+}
+
+.ow-stat-box .last-round-box p.kd-value:before {
+    content: 'KD ';
+}
+
+.ow-stat-box .last-round-box p.score-value,
+.ow-stat-box .last-round-box p.stat-value {
+    line-height: 14px;
+    padding: 4px 0;
+    color: #8A9EA7;
+}
+
+.ow-stat-box .last-round-box p.score-value span,
+.ow-stat-box .last-round-box p.stat-value span {
+    display: inline-block;
+}
+
+.ow-stat-box .last-round-box p.score-value span:after,
+.ow-stat-box .last-round-box p.stat-value span:after {
+    content: '|';
+    display: inline-block;
+    padding: 0 10px;
+    opacity: .5;
+}
+
+.ow-stat-box .last-round-box p.score-value span:last-child:after,
+.ow-stat-box .last-round-box p.stat-value span:last-child:after {
+    content: none;
+}
+
+.ow-stat-box .last-round-box img {
+    height: 86px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+}
+
+.ow-stat-box .cp {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: 4px;
+    font-size: 12px;
+    line-height: 12px;
+    color: #8A9EA7;
+    transform: scale(.8);
+    opacity: .5;
+}
+
+@media (max-width: 400px) {
+    .ow-stat-box .num-box li {
+        padding: 5px;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 320px) {
+    .ow-stat-box .num-box {
+        zoom: .95;
+    }
+}
