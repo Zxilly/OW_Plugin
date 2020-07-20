@@ -42,5 +42,5 @@ class Player(object):
 
     def getprofile(self):
         profile_json = self.main_session.get(url='https://ow.blizzard.cn/action/career/profile').content.decode()
-        return json.dumps(profile_json)
+        return json.loads(profile_json)
 

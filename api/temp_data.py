@@ -12,6 +12,8 @@ with open('gamedata.json','r+',encoding='utf-8') as f:
 # @pargm id:object
 
 translate_dict = {}
+translate_dict['achievements'] = {}
+translate_dict['heroComparison'] = {}
 
 for achievements_type in gamedata_dict['achievements']:
     achievements_type_name = achievements_type['displayName']
@@ -19,13 +21,16 @@ for achievements_type in gamedata_dict['achievements']:
     for achievements in achievements_type['achievements']:
         # rint(achievements)
         achievements['type'] = achievements_type_name
-        translate_dict[achievements['id']] = achievements
+        translate_dict['achievements'][achievements['id']] = achievements
 
-translate_dict = merge(translate_dict,gamedata_dict['stats'])
-translate_dict = merge(translate_dict,gamedata_dict['heroesMap'])
+translate_dict['stats'] = gamedata_dict['stats']
+translate_dict['heroes'] = gamedata_dict['heroesMap']
+
+# translate_dict = merge(translate_dict,gamedata_dict['stats'])
+# translate_dict = merge(translate_dict,gamedata_dict['heroesMap'])
 
 for one in gamedata_dict['heroComparison']:
-    translate_dict[one['id']] = one
+    translate_dict['heroComparison'][one['id']] = one
 
 with open('translated_gamedata.json','w+') as f:
     f.write(json.dumps(translate_dict))
