@@ -6,6 +6,8 @@ import json
 
 from data import *
 
+import time
+
 
 class Player(object):
     def __init__(self, account, password):
@@ -43,6 +45,6 @@ class Player(object):
             raise Exception("Login Failed.Maybe caused by remote login.")
 
     def getprofile(self):
-        profile_json = self.main_session.get(url='https://ow.blizzard.cn/action/career/profile').content.decode()
-        return json.loads(profile_json)
+        profile_json = self.main_session.get(url='https://ow.blizzard.cn/action/career/profile'+str(time.time())).content.decode()
+        return json.loads(profile_json)['data']
 
