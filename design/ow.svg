@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 400 232">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f2f1ed;
+      }
+
+      .cls-2 {
+        fill: #ed891d;
+      }
+
+      .cls-13, .cls-3 {
+        fill: #3d3e7c;
+      }
+
+      .cls-4 {
+        fill: none;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-12, .cls-5, .cls-6, .cls-7, .cls-9 {
+        fill: #f0edf2;
+      }
+
+      .cls-6 {
+        font-size: 22.95px;
+      }
+
+      .cls-12, .cls-13, .cls-16, .cls-6, .cls-7, .cls-9 {
+        font-family: BebasNeue-Regular, Bebas Neue;
+      }
+
+      .cls-7 {
+        font-size: 38px;
+      }
+
+      .cls-8 {
+        letter-spacing: -0.09em;
+      }
+
+      .cls-9 {
+        font-size: 12.25px;
+      }
+
+      .cls-10, .cls-11 {
+        fill: #293650;
+      }
+
+      .cls-11 {
+        fill-rule: evenodd;
+      }
+
+      .cls-12, .cls-13 {
+        font-size: 19.68px;
+      }
+
+      .cls-14 {
+        letter-spacing: 0em;
+      }
+
+      .cls-15 {
+        letter-spacing: -0.05em;
+      }
+
+      .cls-16 {
+        font-size: 26px;
+      }
+
+      .cls-17 {
+        font-size: 10px;
+        font-family: MicrosoftYaHei, Microsoft YaHei;
+      }
+      
+      #fix1 {
+        stroke-dasharray: 18.7489, 100; 
+        stroke-dashoffset: 0;
+        stroke: #f19512;
+        stroke-width: 2px;
+      }
+
+      #fix2 {
+        stroke-dasharray: 71.7443, 100; 
+        stroke-dashoffset: -18.7489;
+        stroke: #c81af5;
+        stroke-width: 2px;
+      }
+
+      #fix3 {
+        stroke-dasharray: 97, 100; 
+        stroke-dashoffset: -71.7443;
+        stroke: #40ce44;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="背景">
+    <g>
+      <rect class="cls-1" y="147.64" width="400" height="84.36"/>
+      <rect class="cls-2" y="47.45" width="400" height="100.18"/>
+      <rect class="cls-3" width="400" height="47.45"/>
+    </g>
+  </g>
+  <g id="顶栏">
+    <g id="赞赏等级">
+      <circle id="fix1" class="cls-4" cx="348.35" cy="22.66" r="12.18"/>
+	  <circle id="fix2" class="cls-4" cx="348.35" cy="22.66" r="12.18"/>
+	  <circle id="fix3" class="cls-4" cx="348.35" cy="22.66" r="12.18"/>
+      <g id="赞赏框">
+        <path class="cls-5" d="M367,23.92h-5.11a13.49,13.49,0,0,1-3.22,7.54c-.17.21-.37.39-.55.59a13.37,13.37,0,0,1-7.1,3.89v4.22a17.51,17.51,0,0,0,9.08-4.28l-1.22-2.39a15.4,15.4,0,0,0,2.6-3.41c.13-.23.24-.46.36-.7l1.57-.39,1.49-.38,1.16-.28,1.22-.31,2.3-.59-.83-3.51Z"/>
+        <path class="cls-5" d="M368.74,17.65,366.22,17h-.09l-.57-.15-.6-.15-3.06-.82c-.11-.23-.23-.46-.36-.7a15.4,15.4,0,0,0-2.6-3.41l1.21-2.34a17.74,17.74,0,0,0-9.09-4.28V9.4a13.33,13.33,0,0,1,7.13,3.9c.19.19.38.39.56.59a13.05,13.05,0,0,1,3.16,7.48h6.91l.84-3.51Z"/>
+        <path class="cls-5" d="M337.81,11.81a15.32,15.32,0,0,0-2.59,3.35c-.14.25-.27.51-.4.77l-1.57.39-1.49.38L330.6,17l-3.57.9.85,3.51h7.19a13.59,13.59,0,0,1,2-6v-.09a13.67,13.67,0,0,1,1.1-1.41l.41-.46a13.49,13.49,0,0,1,7.32-4V5.16a17.62,17.62,0,0,0-9.32,4.32Z"/>
+        <path class="cls-5" d="M338.34,31.46A12.18,12.18,0,0,1,337.17,30l-.07-.1a13.43,13.43,0,0,1-2.05-6h-7.19L327,27.44l2.31.59,1.22.3,1.15.29,1.49.38,1.58.38a7.75,7.75,0,0,0,.42.81,15.19,15.19,0,0,0,2.6,3.32l-1.2,2.3a17.54,17.54,0,0,0,9.34,4.35V35.89a13.41,13.41,0,0,1-7.27-4Z"/>
+      </g>
+      <text id="等级" class="cls-6" transform="translate(342 31.51) scale(1.11 1)">1</text>
+    </g>
+    <g id="玩家名">
+      <image width="128" height="128" transform="translate(5 5) scale(0.27)" xlink:href="avatar.png"/>
+      <text class="cls-7" transform="matrix(0.97, 0, -0.26, 0.97, 50.22, 36.69)">Zxil<tspan class="cls-8" x="49.55" y="0">l</tspan><tspan x="59.28" y="0">y</tspan></text>
+    </g>
+    <g id="等级-2" data-name="等级">
+      <image width="256" height="256" transform="translate(254) scale(0.18)" xlink:href="level.png"/>
+      <image width="256" height="128" transform="translate(255 22) scale(0.17)" xlink:href="level_star.png"/>
+      <text id="等级-3" data-name="等级" class="cls-9" transform="translate(268 26.63) scale(1.11 1)">123</text>
+    </g>
+  </g>
+  <g id="中栏">
+    <g id="分数">
+      <text class="cls-7" transform="matrix(0.97, 0, -0.26, 0.97, 40.37, 108.51)">1642</text>
+      <text class="cls-7" transform="matrix(0.97, 0, -0.26, 0.97, 310.37, 108.96)">1600</text>
+      <text class="cls-7" transform="matrix(0.97, 0, -0.26, 0.97, 176.37, 108.51)">1637</text>
+    </g>
+    <g id="图标">
+      <path class="cls-10" d="M30,92.23V97a2.28,2.28,0,0,1-.31,1.23,29.49,29.49,0,0,1-9.08,10.16,1,1,0,0,1-1.23,0,29.6,29.6,0,0,1-9-10A2.89,2.89,0,0,1,10.07,97c0-3,.07-6,0-9-.08-2.23,1.61-2.54,3.08-2.92A29.79,29.79,0,0,1,20.46,84a32.13,32.13,0,0,1,7.23,1.23c1,.31,2.08.69,2.23,1.69.08.85,0,1.7.08,2.54Z"/>
+      <g>
+        <g>
+          <path class="cls-10" d="M145.72,104.84h5.16v2.84h-5.16Z"/>
+          <path class="cls-10" d="M150.81,89.51V89c-.36-3.49-2.54-4.58-2.54-4.58s-2.18,1.09-2.55,4.58v13.88h5.09Z"/>
+        </g>
+        <g>
+          <path class="cls-10" d="M153.28,104.84h5.16v2.84h-5.16Z"/>
+          <path class="cls-10" d="M158.37,89.51V89c-.36-3.49-2.54-4.58-2.54-4.58s-2.18,1.09-2.55,4.58v13.88h5.09Z"/>
+        </g>
+        <g>
+          <path class="cls-10" d="M160.84,104.84H166v2.84h-5.16Z"/>
+          <path class="cls-10" d="M165.93,89.51V89c-.37-3.49-2.55-4.58-2.55-4.58s-2.18,1.09-2.54,4.58v13.88h5.09Z"/>
+        </g>
+      </g>
+      <path class="cls-11" d="M298.26,93.21h-4.68V88.54a1.67,1.67,0,0,0-1.68-1.68H288a1.67,1.67,0,0,0-1.69,1.68v4.67h-4.61A1.68,1.68,0,0,0,280,94.89v3.93a1.68,1.68,0,0,0,1.68,1.68h4.68v4.67a1.67,1.67,0,0,0,1.68,1.69H292a1.67,1.67,0,0,0,1.68-1.69V100.5h4.68A1.68,1.68,0,0,0,300,98.82V94.89A1.77,1.77,0,0,0,298.26,93.21Z"/>
+      <text class="cls-12" transform="matrix(0.93, 0, -0.26, 0.97, 3.83, 64.55)">MMR</text>
+    </g>
+  </g>
+  <g id="底栏">
+    <image width="1098" height="449" transform="translate(204 152) scale(0.18)" xlink:href="images_hero_zarya_career-portrait.png"/>
+    <text class="cls-13" transform="matrix(0.93, 0, -0.26, 0.97, 3.73, 164.89)"><tspan class="cls-14">D</tspan><tspan class="cls-15" x="7.95" y="0">at</tspan><tspan x="21.2" y="0">a</tspan></text>
+    <g id="_1" data-name="1">
+      <text class="cls-16" transform="matrix(0.93, 0, -0.26, 0.97, 40.48, 173.27)">1.31</text>
+      <text class="cls-17" transform="matrix(0.93, 0, -0.26, 0.97, 43.56, 184.43)">胜率</text>
+    </g>
+    <g id="_2" data-name="2">
+      <text class="cls-16" transform="matrix(0.93, 0, -0.26, 0.97, 40.18, 213.33)">883</text>
+      <text class="cls-17" transform="matrix(0.93, 0, -0.26, 0.97, 43.26, 224.49)">胜场数</text>
+    </g>
+    <g id="_3" data-name="3">
+      <text class="cls-16" transform="matrix(0.93, 0, -0.26, 0.97, 120.18, 173.33)">12081</text>
+      <text class="cls-17" transform="matrix(0.93, 0, -0.26, 0.97, 123.26, 184.49)">消灭</text>
+    </g>
+    <g id="_4" data-name="4">
+      <text class="cls-16" transform="matrix(0.93, 0, -0.26, 0.97, 120.18, 213.33)">4478</text>
+      <text class="cls-17" transform="matrix(0.93, 0, -0.26, 0.97, 123.26, 224.49)">阵亡</text>
+    </g>
+    <g id="_5" data-name="5">
+      <text class="cls-16" transform="matrix(0.93, 0, -0.26, 0.97, 200.18, 173.33)">393</text>
+      <text class="cls-17" transform="matrix(0.93, 0, -0.26, 0.97, 203.26, 184.49)">重力喷涌消灭</text>
+    </g>
+    <g id="_6" data-name="6">
+      <text class="cls-16" transform="matrix(0.93, 0, -0.26, 0.97, 200.18, 213.33)">1422</text>
+      <text class="cls-17" transform="matrix(0.93, 0, -0.26, 0.97, 203.26, 224.49)">高能消灭</text>
+    </g>
+  </g>
+</svg>

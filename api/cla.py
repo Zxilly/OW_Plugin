@@ -38,7 +38,9 @@ class Player(object):
             "csrftoken": self.csrftoken,
             "sessionTimeout": self.sessionTimeout
         }
-        self.main_session.post(url=login_data_url,data=login_form)
+        endpage = self.main_session.post(url=login_data_url,data=login_form)
+        if endpage.url != "https://ow.blizzard.cn/career/":
+            raise Exception("Login Failed.Maybe caused by remote login.")
 
     def getprofile(self):
         profile_json = self.main_session.get(url='https://ow.blizzard.cn/action/career/profile').content.decode()
