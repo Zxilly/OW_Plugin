@@ -1,8 +1,9 @@
 from fastapi import FastAPI,Response
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from pydantic import BaseModel
 import uvicorn
 import render
-from cla import *
 import hashlib
 import json
 
@@ -16,7 +17,20 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/api")
+app.mount("/api", StaticFiles(directory="cache"), name="static")
+
+class Item(BaseModel):
+    data:str
+
+@app.post("/update")
+async def update(data:Item):
+    profile = json.loads(data.data)['data']
+    file_name = hashlib.md5(profile['player']['displayName'].encode(encoding='UTF-8')).hexdigest()
+    with open('cache/'+file_name+'.svg','w+',encoding='UTF-8') as f:
+        f.write(render.render(profile))
+    return 'Successful update.Link is https://ow.plugin.learningman.top/api/'+file_name+'.svg'
+
+""" 
 async def entry(cred:str):
     with open('cache/'+cred+'.json','r+') as f:
         info = json.loads(f.read())
@@ -25,18 +39,9 @@ async def entry(cred:str):
     a = Player(account,password)
     return_value = render.render(a.getprofile())
     return Response(content=return_value,media_type='image/svg+xml')
-
-@app.get("/reg")
-async def register(account:str,password:str):
-    md5_string = hashlib.md5((account+password).encode(encoding='UTF-8')).hexdigest()
-    cred = json.dumps((account,password))
-    with open('cache/'+md5_string+'.json','w+') as f:
-        f.write(cred)
-    return 'https://ow.plugin.learningman.top/api?cred='+md5_string
-
-    
+"""
 
 
 
 if __name__ == '__main__':
-    uvicorn.run(app='index:app', host="0.0.0.0", port=3000, reload=False, debug=False)
+    uvicorn.run(app='index:app', host="0.0.0.0", port=3000, reload=False, debug=True)
