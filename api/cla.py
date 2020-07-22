@@ -49,3 +49,6 @@ class Player(object):
         # print(profile_json)
         return json.loads(profile_json)['data']
 
+    def get_session(self):
+        return self.main_session.cookies.get_dict()
+
