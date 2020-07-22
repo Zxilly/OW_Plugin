@@ -1,0 +1,15 @@
+[Unit]
+Description=OW_Plugin
+Wants = network-online.target
+
+After = network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/env python3 index.py
+WorkingDirectory=/www/wwwroot/ow
+StandardOutput=syslog
+StandardError=inherit
+
+[Install]
+WantedBy=multi-user.target
