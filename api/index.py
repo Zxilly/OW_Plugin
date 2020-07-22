@@ -1,6 +1,7 @@
-from fastapi import FastAPI
+from fastapi import FastAPI,Response
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
+import render
 from cla import *
 
 app = FastAPI()
@@ -16,7 +17,10 @@ app.add_middleware(
 @app.get("/api")
 async def entry(account:str,password:str):
     a = Player(account,password)
-    return a.getprofile()
+    return_value = render.render(a.getprofile())
+    return Response(content=return_value,media_type='image/svg+xml')
+
+
     
 
 

@@ -45,6 +45,7 @@ class Player(object):
             raise Exception("Login Failed.Maybe caused by remote login.")
 
     def getprofile(self):
-        profile_json = self.main_session.get(url='https://ow.blizzard.cn/action/career/profile'+str(time.time())).content.decode()
+        profile_json = self.main_session.get(url='https://ow.blizzard.cn/action/career/profile?'+str(time.time())).content.decode()
+        # print(profile_json)
         return json.loads(profile_json)['data']
 

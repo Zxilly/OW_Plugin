@@ -22,25 +22,43 @@ def render(profile):
     icon_name = "svg_icon_"+str(profile['player']['endorsement']['level'])
     player_name = profile['player']['displayName'].split('#')[0]
     hero_portrait_image = 'https://overwatch.nosdn.127.net/images/hero/{}/career-portrait.png'.format(profile['player']['masthead'])
+    win_round = int(profile['careerStats']['unranked']['stats']['0x02E00000FFFFFFFF']['0x08600000000003F5']+int(profile['careerStats']['ranked']['stats']['0x02E00000FFFFFFFF']['0x08600000000003F5']))
+    defeat_round = int(profile['careerStats']['unranked']['stats']['0x02E00000FFFFFFFF']['0x086000000000042E'])+int(profile['careerStats']['ranked']['stats']['0x02E00000FFFFFFFF']['0x086000000000042E'])
+    win_rate = str(int(win_round/(win_round+defeat_round) *100))+'%'
+    # /data/careerStats/unranked/stats/0x02E00000FFFFFFFF/0x086000000000042E
+    # /data/careerStats/ranked/stats/0x02E00000FFFFFFFF/0x086000000000042E
+    kill = profile['careerStats']['unranked']['stats']['0x02E00000FFFFFFFF']['0x0860000000000025']+profile['careerStats']['ranked']['stats']['0x02E00000FFFFFFFF']['0x0860000000000025']
+    #/data/careerStats/ranked/stats/0x02E00000FFFFFFFF/0x0860000000000025
+    dead = profile['careerStats']['unranked']['stats']['0x02E00000FFFFFFFF']['0x0860000000000029']+profile['careerStats']['ranked']['stats']['0x02E00000FFFFFFFF']['0x0860000000000029']
+    # /data/careerStats/ranked/stats/0x02E00000FFFFFFFF/0x0860000000000029
+    special1 = profile['careerStats']['unranked']['stats']['0x02E0000000000068']['0x0860000000000229']+profile['careerStats']['ranked']['stats']['0x02E0000000000068']['0x0860000000000229']
+    # /data/careerStats/unranked/stats/0x02E0000000000068/0x0860000000000229
+    special2 = profile['careerStats']['unranked']['stats']['0x02E0000000000068']['0x086000000000022D']+profile['careerStats']['ranked']['stats']['0x02E0000000000068']['0x086000000000022D']
+    # /data/careerStats/ranked/stats/0x02E0000000000068/0x086000000000022D
     data_dict = {
-        '1length':length_1,
-        '2length':length_2,
-        '3length':length_3,
-        '12length':length_1+length_2,
+        'length1':length_1,
+        'length2':length_2,
+        'length3':length_3,
+        'length12':length_1+length_2,
         'endorsementlevel':profile['player']['endorsement']['level'],
         'endorsementicon':get_svg_icon(profile['player']['endorsement']['level']),
         'playername':player_name,
         'level':profile['player']['level'],
-        'trating':profile['ranked']['tank']['level'],
-        'crating':profile['ranked']['damage']['level'],
-        'nrating':profile['ranked']['support']['level'],
+        'trating':profile['player']['ranked']['tank']['level'],
+        'crating':profile['player']['ranked']['damage']['level'],
+        'nrating':profile['player']['ranked']['support']['level'],
         'heroportraitimage':hero_portrait_image,
         'avatar':'https://overwatch.nosdn.127.net/images/'+profile['player']['portraitAvatar'],
-        'winrate':'',
-        'winround':int(profile['careerStats']['unranked']['0x02E00000FFFFFFFF']['0x08600000000003F5']+int(profile['careerStats']['ranked']['0x02E00000FFFFFFFF']['0x08600000000003F5'])),
-        'kill':'',
-        'dead':'',
-        'special1':'',
-        'special2':'',
+        'winrate':win_rate,
+        'winround':win_round,
+        'kill':kill,
+        'dead':dead,
+        'special1':special1,
+        'special2':special2,
+        'levelimg':'https://overwatch.nosdn.127.net/images/'+profile['player']['portraitFrame'],
+        'levelstarimg':'https://overwatch.nosdn.127.net/images/'+profile['player']['portraitFrameIcon']
     }
+
+    output = data.svg_template.format(**data_dict)
+    return output
 
