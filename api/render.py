@@ -1,4 +1,11 @@
 import data
+import base64
+import requests
+
+def render_image(url):
+    a = requests.get(url)
+    base_content = base64.b64encode(a.content)
+    return 'data:image/png;base64,'+base_content.decode()
 
 def get_svg_icon(level:int):
     if(level==0):
@@ -21,7 +28,7 @@ def render(profile):
     length_3 = profile['player']['endorsement']['sportsmanship']/profile['player']['endorsement']['total'] * circle_c
     icon_name = "svg_icon_"+str(profile['player']['endorsement']['level'])
     player_name = profile['player']['displayName'].split('#')[0]
-    hero_portrait_image = 'https://overwatch.nosdn.127.net/images/hero/{}/career-portrait.png'.format(profile['player']['masthead'])
+    hero_portrait_image = render_image('https://overwatch.nosdn.127.net/images/hero/{}/career-portrait.png'.format(profile['player']['masthead']))
     win_round = int(profile['careerStats']['unranked']['stats']['0x02E00000FFFFFFFF']['0x08600000000003F5']+int(profile['careerStats']['ranked']['stats']['0x02E00000FFFFFFFF']['0x08600000000003F5']))
     defeat_round = int(profile['careerStats']['unranked']['stats']['0x02E00000FFFFFFFF']['0x086000000000042E'])+int(profile['careerStats']['ranked']['stats']['0x02E00000FFFFFFFF']['0x086000000000042E'])
     win_rate = str(int(win_round/(win_round+defeat_round) *100))+'%'
@@ -48,15 +55,15 @@ def render(profile):
         'crating':profile['player']['ranked']['damage']['level'],
         'nrating':profile['player']['ranked']['support']['level'],
         'heroportraitimage':hero_portrait_image,
-        'avatar':'https://overwatch.nosdn.127.net/images/'+profile['player']['portraitAvatar'],
+        'avatar':render_image('https://overwatch.nosdn.127.net/images/'+profile['player']['portraitAvatar']),
         'winrate':win_rate,
         'winround':win_round,
         'kill':kill,
         'dead':dead,
         'special1':special1,
         'special2':special2,
-        'levelimg':'https://overwatch.nosdn.127.net/images/'+profile['player']['portraitFrame'],
-        'levelstarimg':'https://overwatch.nosdn.127.net/images/'+profile['player']['portraitFrameIcon']
+        'levelimg':render_image('https://overwatch.nosdn.127.net/images/'+profile['player']['portraitFrame']),
+        'levelstarimg':render_image('https://overwatch.nosdn.127.net/images/'+profile['player']['portraitFrameIcon'])
     }
 
     output = data.svg_template.format(**data_dict)
