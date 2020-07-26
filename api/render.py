@@ -49,7 +49,7 @@ def render(profile):
         'length12':length_1+length_2,
         'endorsementlevel':profile['player']['endorsement']['level'],
         'endorsementicon':get_svg_icon(profile['player']['endorsement']['level']),
-        'playername':player_name,
+        'playername':player_name.upper(),
         'level':profile['player']['level'],
         'trating':profile['player']['ranked']['tank']['level'],
         'crating':profile['player']['ranked']['damage']['level'],
