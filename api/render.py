@@ -29,19 +29,42 @@ def render(profile):
     icon_name = "svg_icon_"+str(profile['player']['endorsement']['level'])
     player_name = profile['player']['displayName'].split('#')[0]
     hero_portrait_image = render_image('https://overwatch.nosdn.127.net/images/hero/{}/career-portrait.png'.format(profile['player']['masthead']))
-    win_round = int(profile['careerStats']['unranked']['stats']['0x02E00000FFFFFFFF']['0x08600000000003F5']+int(profile['careerStats']['ranked']['stats']['0x02E00000FFFFFFFF']['0x08600000000003F5']))
-    defeat_round = int(profile['careerStats']['unranked']['stats']['0x02E00000FFFFFFFF']['0x086000000000042E'])+int(profile['careerStats']['ranked']['stats']['0x02E00000FFFFFFFF']['0x086000000000042E'])
-    win_rate = str(int(win_round/(win_round+defeat_round) *100))+'%'
-    # /data/careerStats/unranked/stats/0x02E00000FFFFFFFF/0x086000000000042E
-    # /data/careerStats/ranked/stats/0x02E00000FFFFFFFF/0x086000000000042E
-    kill = profile['careerStats']['unranked']['stats']['0x02E00000FFFFFFFF']['0x0860000000000025']+profile['careerStats']['ranked']['stats']['0x02E00000FFFFFFFF']['0x0860000000000025']
-    #/data/careerStats/ranked/stats/0x02E00000FFFFFFFF/0x0860000000000025
-    dead = profile['careerStats']['unranked']['stats']['0x02E00000FFFFFFFF']['0x0860000000000029']+profile['careerStats']['ranked']['stats']['0x02E00000FFFFFFFF']['0x0860000000000029']
-    # /data/careerStats/ranked/stats/0x02E00000FFFFFFFF/0x0860000000000029
-    special1 = profile['careerStats']['unranked']['stats']['0x02E0000000000068']['0x0860000000000229']+profile['careerStats']['ranked']['stats']['0x02E0000000000068']['0x0860000000000229']
-    # /data/careerStats/unranked/stats/0x02E0000000000068/0x0860000000000229
-    special2 = profile['careerStats']['unranked']['stats']['0x02E0000000000068']['0x086000000000022D']+profile['careerStats']['ranked']['stats']['0x02E0000000000068']['0x086000000000022D']
-    # /data/careerStats/ranked/stats/0x02E0000000000068/0x086000000000022D
+    try:
+        win_round = int(profile['careerStats']['unranked']['stats']['0x02E00000FFFFFFFF']['0x08600000000003F5'] + int(
+            profile['careerStats']['ranked']['stats']['0x02E00000FFFFFFFF']['0x08600000000003F5']))
+        defeat_round = int(
+            profile['careerStats']['unranked']['stats']['0x02E00000FFFFFFFF']['0x086000000000042E']) + int(
+            profile['careerStats']['ranked']['stats']['0x02E00000FFFFFFFF']['0x086000000000042E'])
+        win_rate = str(int(win_round / (win_round + defeat_round) * 100)) + '%'
+        # /data/careerStats/unranked/stats/0x02E00000FFFFFFFF/0x086000000000042E
+        # /data/careerStats/ranked/stats/0x02E00000FFFFFFFF/0x086000000000042E
+        kill = profile['careerStats']['unranked']['stats']['0x02E00000FFFFFFFF']['0x0860000000000025'] + \
+               profile['careerStats']['ranked']['stats']['0x02E00000FFFFFFFF']['0x0860000000000025']
+        # /data/careerStats/ranked/stats/0x02E00000FFFFFFFF/0x0860000000000025
+        dead = profile['careerStats']['unranked']['stats']['0x02E00000FFFFFFFF']['0x0860000000000029'] + \
+               profile['careerStats']['ranked']['stats']['0x02E00000FFFFFFFF']['0x0860000000000029']
+        # /data/careerStats/ranked/stats/0x02E00000FFFFFFFF/0x0860000000000029
+        special1 = profile['careerStats']['unranked']['stats']['0x02E0000000000068']['0x0860000000000229'] + \
+                   profile['careerStats']['ranked']['stats']['0x02E0000000000068']['0x0860000000000229']
+        # /data/careerStats/unranked/stats/0x02E0000000000068/0x0860000000000229
+        special2 = profile['careerStats']['unranked']['stats']['0x02E0000000000068']['0x086000000000022D'] + \
+                   profile['careerStats']['ranked']['stats']['0x02E0000000000068']['0x086000000000022D']
+        # /data/careerStats/ranked/stats/0x02E0000000000068/0x086000000000022D
+    except:
+        win_round = int(profile['careerStats']['unranked']['stats']['0x02E00000FFFFFFFF']['0x08600000000003F5'])
+        defeat_round = int(
+            profile['careerStats']['unranked']['stats']['0x02E00000FFFFFFFF']['0x086000000000042E'])
+        win_rate = str(int(win_round / (win_round + defeat_round) * 100)) + '%'
+        # /data/careerStats/unranked/stats/0x02E00000FFFFFFFF/0x086000000000042E
+        # /data/careerStats/ranked/stats/0x02E00000FFFFFFFF/0x086000000000042E
+        kill = profile['careerStats']['unranked']['stats']['0x02E00000FFFFFFFF']['0x0860000000000025']
+        # /data/careerStats/ranked/stats/0x02E00000FFFFFFFF/0x0860000000000025
+        dead = profile['careerStats']['unranked']['stats']['0x02E00000FFFFFFFF']['0x0860000000000029']
+        # /data/careerStats/ranked/stats/0x02E00000FFFFFFFF/0x0860000000000029
+        special1 = profile['careerStats']['unranked']['stats']['0x02E0000000000068']['0x0860000000000229']
+        # /data/careerStats/unranked/stats/0x02E0000000000068/0x0860000000000229
+        special2 = profile['careerStats']['unranked']['stats']['0x02E0000000000068']['0x086000000000022D']
+        # /data/careerStats/ranked/stats/0x02E0000000000068/0x086000000000022D
     data_dict = {
         'length1':length_1,
         'length2':length_2,
