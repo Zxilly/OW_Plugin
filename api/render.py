@@ -75,15 +75,15 @@ def render(profile):
         try:
             tr = profile['player']['ranked']['tank']['level']
         except:
-            tr = 'Null'
+            tr = '????'
         try:
             cr = profile['player']['ranked']['damage']['level']
         except:
-            cr = 'Null'
+            cr = '????'
         try:
             nr = profile['player']['ranked']['damage']['level']
         except:
-            nr = 'Null'
+            nr = '????'
     data_dict = {
         'length1':length_1,
         'length2':length_2,
