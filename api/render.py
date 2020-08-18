@@ -30,6 +30,10 @@ def render(profile):
     player_name = profile['player']['displayName'].split('#')[0]
     hero_portrait_image = render_image('https://overwatch.nosdn.127.net/images/hero/{}/career-portrait.png'.format(profile['player']['masthead']))
     try:
+        level_star = render_image('https://overwatch.nosdn.127.net/images/'+profile['player']['portraitFrameIcon'])
+    except:
+        level_star = ''
+    try:
         win_round = int(profile['careerStats']['unranked']['stats']['0x02E00000FFFFFFFF']['0x08600000000003F5'] + int(
             profile['careerStats']['ranked']['stats']['0x02E00000FFFFFFFF']['0x08600000000003F5']))
         defeat_round = int(
@@ -101,7 +105,7 @@ def render(profile):
         'special1':special1,
         'special2':special2,
         'levelimg':render_image('https://overwatch.nosdn.127.net/images/'+profile['player']['portraitFrame']),
-        'levelstarimg':render_image('https://overwatch.nosdn.127.net/images/'+profile['player']['portraitFrameIcon'])
+        'levelstarimg':level_star
     }
 
     output = data.svg_template.format(**data_dict)
