@@ -50,6 +50,9 @@ def render(profile):
         special2 = profile['careerStats']['unranked']['stats']['0x02E0000000000068']['0x086000000000022D'] + \
                    profile['careerStats']['ranked']['stats']['0x02E0000000000068']['0x086000000000022D']
         # /data/careerStats/ranked/stats/0x02E0000000000068/0x086000000000022D
+        tr = profile['player']['ranked']['tank']['level']
+        cr = profile['player']['ranked']['damage']['level']
+        nr = profile['player']['ranked']['support']['level']
     except:
         win_round = int(profile['careerStats']['unranked']['stats']['0x02E00000FFFFFFFF']['0x08600000000003F5'])
         defeat_round = int(
@@ -65,6 +68,18 @@ def render(profile):
         # /data/careerStats/unranked/stats/0x02E0000000000068/0x0860000000000229
         special2 = profile['careerStats']['unranked']['stats']['0x02E0000000000068']['0x086000000000022D']
         # /data/careerStats/ranked/stats/0x02E0000000000068/0x086000000000022D
+        try:
+            tr = profile['player']['ranked']['tank']['level']
+        except:
+            tr = 'Null'
+        try:
+            cr = profile['player']['ranked']['damage']['level']
+        except:
+            cr = 'Null'
+        try:
+            nr = profile['player']['ranked']['damage']['level']
+        except:
+            nr = 'Null'
     data_dict = {
         'length1':length_1,
         'length2':length_2,
@@ -74,9 +89,9 @@ def render(profile):
         'endorsementicon':get_svg_icon(profile['player']['endorsement']['level']),
         'playername':player_name.upper(),
         'level':profile['player']['level'],
-        'trating':profile['player']['ranked']['tank']['level'],
-        'crating':profile['player']['ranked']['damage']['level'],
-        'nrating':profile['player']['ranked']['support']['level'],
+        'trating':tr,
+        'crating':cr,
+        'nrating':nr,
         'heroportraitimage':hero_portrait_image,
         'avatar':render_image('https://overwatch.nosdn.127.net/images/'+profile['player']['portraitAvatar']),
         'winrate':win_rate,
