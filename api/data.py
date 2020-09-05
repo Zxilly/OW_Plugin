@@ -126,8 +126,8 @@ svg_template = """
   <g id="中栏">
     <g id="分数">
       <text class="cls-7" transform="matrix(0.97, 0, -0.26, 0.97, 40.37, 110.51)">{trating}</text>
-      <text class="cls-7" transform="matrix(0.97, 0, -0.26, 0.97, 310.37, 110.96)">{crating}</text>
-      <text class="cls-7" transform="matrix(0.97, 0, -0.26, 0.97, 176.37, 110.51)">{nrating}</text>
+      <text class="cls-7" transform="matrix(0.97, 0, -0.26, 0.97, 310.37, 110.96)">{nrating}</text>
+      <text class="cls-7" transform="matrix(0.97, 0, -0.26, 0.97, 176.37, 110.51)">{crating}</text>
     </g>
     <g id="图标">
       <path class="cls-10" d="M30,92.23V97a2.28,2.28,0,0,1-.31,1.23,29.49,29.49,0,0,1-9.08,10.16,1,1,0,0,1-1.23,0,29.6,29.6,0,0,1-9-10A2.89,2.89,0,0,1,10.07,97c0-3,.07-6,0-9-.08-2.23,1.61-2.54,3.08-2.92A29.79,29.79,0,0,1,20.46,84a32.13,32.13,0,0,1,7.23,1.23c1,.31,2.08.69,2.23,1.69.08.85,0,1.7.08,2.54Z" transform="translate(0 2)"/>
