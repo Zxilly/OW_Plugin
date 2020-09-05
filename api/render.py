@@ -81,7 +81,7 @@ def render(profile):
         except:
             cr = 'Null'
         try:
-            nr = profile['player']['ranked']['damage']['level']
+            nr = profile['player']['ranked']['support']['level']
         except:
             nr = 'Null'
     data_dict = {
